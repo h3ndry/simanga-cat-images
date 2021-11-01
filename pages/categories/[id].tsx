@@ -2,7 +2,7 @@ import type { NextPage } from 'next'
 import { API_KEY } from "../../.env.js"
 // import Head from 'next/head'
 // import Image from 'next/image'
-// import { GetStaticProps } from "next";
+import styles from '../../styles/Breeds.module.css'
 
 export const getStaticPaths = async () => {
     const url = "https://api.thecatapi.com/v1/categories";
@@ -53,10 +53,8 @@ export const getStaticProps = async (context: any) => {
 const Details: NextPage<{ data: any }> = ({ data }) => {
     console.log(data);
   return (
-  <div>
-    what the fuck wrong with you
+  <div className={styles.category_details}>
     <img src={data[0].url} />
-    // {data[0].url}
   </div>
 
 
