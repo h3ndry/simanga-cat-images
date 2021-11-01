@@ -26,7 +26,7 @@ const Item: FC<Props> = (
 
     useEffect(() => {
         // setBreeds(m_data);
-        console.log(observer)
+        // console.log(observer)
         
     }, []);
 

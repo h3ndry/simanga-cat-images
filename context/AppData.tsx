@@ -56,7 +56,14 @@ export function ContextProvider({ children }: Props) {
                 body: JSON.stringify(data),
             });
 
-            console.log(res);
+            const res_obj: any = await res.json()
+
+            if (res_obj.message === "SUCCESS"){
+             alert(`Image have been added to Favorites, reload the page for the UI to take effect`)
+            console.log(res_obj);
+            }
+
+
         } catch (e) {
             console.log(e);
         }
@@ -78,8 +85,14 @@ export function ContextProvider({ children }: Props) {
 
             const data = await res.json();
 
+            if (data.message === "SUCCESS"){
+             alert(`Image have been removed to Favorites, reload the page for the UI to take effect`)
             console.log(data);
-        } catch (e) {}
+            }
+
+        } catch (e) {
+        console.log(e);
+}
     };
 
     const value = {
