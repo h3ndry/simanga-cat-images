@@ -1,0 +1,92 @@
+.container {
+  margin-top: 3rem;
+  display: grid;
+  /* grid-template-columns: 1fr 1fr 1fr; */
+  grid-gap: 1rem;
+}
+
+.card,
+.item {
+  background-color: rgba(255, 255, 255, 0.42);
+  border-radius: 1.5rem;
+  transition: ease 0.3;
+}
+
+.item:hover {
+    background-color: rgba(255, 255, 255, 0.62);
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.item {
+    position: relative;
+  display: block;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  z-index: 2;
+}
+.item .bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bottom h3 {
+  font-size: 1.4rem;
+}
+
+.bottom svg {
+    position: relative;
+    height: 2rem;
+    z-index: 99999;
+    width: 2rem;
+    align-self: center;
+    cursor: pointer;
+}
+
+.liked {
+    fill: red;
+}
+
+.white_bg {
+  background-color: white;
+  overflow: hidden;
+  height: 16rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+  border-radius: 1.5rem;
+  cursor: pointer;
+}
+
+.white_bg .img {
+  height: 95%;
+  border-radius: 1.5rem;
+  background-color: lightgrey;
+  width: 95%;
+  background-size: cover;
+}
+
+.white_bg img {
+  /* margin: 0 auto; */
+  /* width: 100%; */
+  /* width: 90%; */
+}
+
+.card {
+  padding: 2rem;
+  position: relative;
+  z-index: 10000;
+}
+
+.card h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-size: 1.5rem;
+  color: #0a0a14;
+}
+
+@media (min-width: 450px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

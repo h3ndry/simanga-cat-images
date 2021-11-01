@@ -1,0 +1,100 @@
+.breeds_list {
+    margin-top: 2rem;
+    display: grid;
+    grid-column-gap: 2rem;
+}
+
+.categories_list {
+    margin-top: 2rem;
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 1rem;
+}
+
+.categories_list h2 {
+    text-transform: capitalize;
+}
+
+@media (min-width: 550px) {
+.breeds_list {
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+.breeds_details {
+    margin: 1.5rem 0;
+  background-color: rgba(255, 255, 255, 0.42);
+  padding: 0.2rem 1rem;
+  border-radius: 1.5rem;
+
+}
+.breeds_details h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.breeds_details h2 span {
+    color: blue;
+}
+
+.breeds_details img {
+    width: calc(100% + 2rem);
+    transform: translateX(-1rem);
+    /* width: 98%; */
+    /* margin: 0 auto; */
+    display: block;
+}
+
+.breeds_details .description {
+    font-size: 1rem;
+    line-height: 1.5;
+    /* font-weight: bold; */
+    /* background-color: red; */
+}
+
+.breeds_details p {
+    font-size: 1rem;
+    font-style: italic;
+}
+.breeds_details p span  {
+    color: blue;
+}
+
+.breeds_details .button {
+    display: block;
+    background-color: #0a0a14;
+    color: white;
+    padding: 1rem 0;
+    border-radius: 10px;
+   margin: 2rem 0 4rem 0; 
+   text-align: center;
+   font-size: 1rem;
+}
+
+@media (min-width: 450px) { 
+.breeds_details h2 {
+    font-size: 2.3rem;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.breeds_details .description {
+    font-size: 1.5rem;
+    line-height: 1.5;         
+    /* font-weight: bold; */
+    /* /* background-color: red;  */
+}
+
+.breeds_details .button {
+    display: block;
+    background-color: #0a0a14;
+    color: white;
+    padding: 1.4rem 0;
+    border-radius: 10px;
+   margin: 2rem 0 4rem 0; 
+   text-align: center;
+   font-size: 1.4rem;
+}
+
+}
