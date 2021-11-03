@@ -10,12 +10,13 @@ type Props = {
 export function ContextProvider({ children }: Props) {
     const [user_id, setUser_id] = useState<any>("sima_id");
     const [breeds, setBreeds] = useState<any>([]);
+    const [page, setPage] = useState(1);
     const [categories, setCategories] = useState<any>([]);
     const [favourites, setFavourite] = useState<any>([]);
 
     const getBreedsList = async (p_no: number) => {
         try {
-    const url = `https://api.thecatapi.com/v1/breeds?page=${p_no}&limit=10`;
+            const url = `https://api.thecatapi.com/v1/breeds?page=${p_no}&limit=10`;
             const res = await fetch(url, {
                 method: "GET",
                 mode: "cors",
@@ -56,14 +57,16 @@ export function ContextProvider({ children }: Props) {
                 body: JSON.stringify(data),
             });
 
-            const res_obj: any = await res.json()
+            const res_obj: any = await res.json();
 
-            if (res_obj.message === "SUCCESS"){
-             alert(`Image have been added to Favorites, reload the page for the UI to take effect`)
-            console.log(res_obj);
+            // Temporary Notification system, let the user know when the image
+            // has been added to favourites
+            if (res_obj.message === "SUCCESS") {
+                alert(
+                    `Image have been added to Favorites, reload the page for the UI to take effect`
+                );
+                console.log(res_obj);
             }
-
-
         } catch (e) {
             console.log(e);
         }
@@ -85,25 +88,56 @@ export function ContextProvider({ children }: Props) {
 
             const data = await res.json();
 
-            if (data.message === "SUCCESS"){
-             alert(`Image have been removed to Favorites, reload the page for the UI to take effect`)
-            console.log(data);
+            // Temporary Notification system, let the user know when the image
+            // has been added to favourites
+            if (data.message === "SUCCESS") {
+                alert(
+                    `Image have been removed to Favorites, reload the page for the UI to take effect`
+                );
+                console.log(data);
             }
-
         } catch (e) {
-        console.log(e);
-}
+            console.log(e);
+        }
+    };
+
+    // HACK: The useState for page is givimg me hard time, Will use this variavle
+    // to keep track of pages when calling the api.
+    let x = 1;
+
+    const addMoreBreeds = async () => {
+        if (x < 6) {
+            x = x + 1;
+            try {
+                const b_url = `https://api.thecatapi.com/v1/breeds?page=${x}&limit=10`;
+                const b_res = await fetch(b_url, {
+                    method: "GET",
+                    mode: "cors",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "x-api-key": API_KEY,
+                    },
+                });
+                const b_data = await b_res.json();
+                setBreeds((prev: any) => [...prev, ...b_data]);
+                console.log(breeds, x);
+            } catch (e) {
+                console.log(e);
+            }
+        }
     };
 
     const value = {
         breeds,
         categories,
+        page,
         favourites,
         user_id,
         setBreeds,
         getBreedsList,
         addToFavourites,
         setFavourite,
+        addMoreBreeds,
         removeToFavourites,
     };
 

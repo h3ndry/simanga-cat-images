@@ -12,7 +12,7 @@ body {
     margin: 0;
     font-family: "Roboto", sans-serif;
     background-size: cover;
-    font-size: .875rem
+    font-size: 0.875rem;
     /* background-cYael Dinerolor: red; */
 }
 
@@ -21,18 +21,18 @@ body {
     position: relative;
 }
 
-.big-cycle, .small-cycle {
- border-radius: 50%;
- position: absolute;
-filter: blur(140px);
-z-index: -1;
-
+.big-cycle,
+.small-cycle {
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(140px);
+    z-index: -1;
 }
 
 .big-cycle {
     height: 30rem;
     width: 30rem;
-    background-image: linear-gradient(to left, #7762FF, #1DB2FF);
+    background-image: linear-gradient(to left, #7762ff, #1db2ff);
     right: 8rem;
     top: 5rem;
 }
@@ -40,14 +40,13 @@ z-index: -1;
 .small-cycle {
     height: 19rem;
     width: 19rem;
-    background-image: linear-gradient(to left, #F91DFF, #7762FF);
+    background-image: linear-gradient(to left, #f91dff, #7762ff);
     right: 43rem;
     top: 25rem;
-
 }
 
 main {
-    max-width: 1024px ;
+    max-width: 1024px;
     width: 94%;
     margin: 0 auto;
     padding-top: 4rem;
@@ -69,4 +68,3 @@ a {
         /* width: 100%; */
     }
 }
-

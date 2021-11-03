@@ -51,7 +51,6 @@ export const getStaticProps = async (context: any) => {
 };
 
 const Details: NextPage<{ data: any }> = ({ data }) => {
-    console.log(data);
   return (
   <div className={styles.category_details}>
     <img src={data[0].url} />
