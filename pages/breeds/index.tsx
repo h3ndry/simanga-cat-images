@@ -60,7 +60,7 @@ const Breeds: NextPage<{ m_data: any }> = ({ m_data }) => {
     const { page, breeds, setBreeds, addMoreBreeds } = useContext(AppContext);
 
 
-    const observer = useRef();
+    const observer: any = useRef();
 
     useEffect(() => {
         if (page === 1) {
@@ -75,7 +75,7 @@ const Breeds: NextPage<{ m_data: any }> = ({ m_data }) => {
 
             btnObserver.observe(observer.current);
 
-    }, []);
+    }, [breeds]);
 
     // console.log(page);
     return (

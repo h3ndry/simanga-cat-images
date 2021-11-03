@@ -73,7 +73,7 @@ const Details: NextPage<{ data: any; image_url: any }> = ({ data }) => {
             </h2>
             <img src={cat_data.url} />
             <p> also called: <span>{cat_data.breeds[0].alt_names}</span></p>
-            <p className={styles.description}>"{cat_data.breeds[0].description}"</p>
+            <p className={styles.description}> &quot; {cat_data.breeds[0].description} &quot; </p>
             <p>Origin Country: <span>{cat_data.breeds[0].origin}</span></p>
             <p>Temperament: <span> {cat_data.breeds[0].temperament}</span></p>
             <p>Life Span: between: <span> {cat_data.breeds[0].life_span} years </span> </p>
